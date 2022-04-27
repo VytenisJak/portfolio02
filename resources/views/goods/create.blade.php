@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
     <form method='POST' action="{{route('goods.store')}}" enctype="multipart/form-data">@csrf
@@ -17,4 +18,3 @@
         <a class="btn btn-secondary" href="{{route('goods.index')}}">Back</a>
     </form>
 @endsection
-

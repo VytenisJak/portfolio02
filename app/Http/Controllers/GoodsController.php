@@ -18,7 +18,7 @@ class GoodsController extends Controller
     public function index()
     {
         $goods = goods::all();  
-        return view('goods.index',['goods' => $goods]);
+        return view('goods.index', ['goods' => $goods]);
     }
 
     /**
