@@ -6,3 +6,38 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+background-color: antiquewhite;
+}
+
+th {
+    text-align: center;
+}
+.infobox{
+    width: 33.3%;
+    height: 30vh;
+    float: left;
+    background-size: 100% 100%;
+    background-origin: content-box;
+    background: center/cover no-repeat;
+    box-sizing: border-box;
+    background-origin: content-box;
+    background-clip: content-box; /*don't show on the padding*/
+    padding: 0.5%;
+}
+
+.title{
+    color: Black;
+    text-align: center;
+
+}
+.topmenu{
+    text-align: center;
+    background-color: rgb(241, 214, 178);
+    border: none;
+}
+.price {
+    width: 15%;
+    background-color: rgb(241, 214, 178);
+}

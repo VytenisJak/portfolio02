@@ -37,12 +37,17 @@ class GoodsController extends Controller
      * @param  \App\Http\Requests\StoregoodsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoregoodsRequest $request)
+    public function store(Request $request)
     {
         $good = new goods;
         $good->title = $request->good_title;
         $good->description = $request->good_description;
-        $good->image_url = $request->good_image_url;
+
+        $imageName = time().'.'.$request->good_image_url->extension();
+        $request->good_image_url->move(public_path('images') , $imageName);
+        $good->image_url = $imageName;
+
+        $good->image_name = $request->good_image_name;
         $good->status_id = $request->good_status_id;
         $good->price = $request->good_price;
         $good->category = $request->good_category;  
@@ -85,7 +90,8 @@ class GoodsController extends Controller
     {
         $goods->title = $request->good_title;
         $goods->description = $request->good_description;
-        $goods->image_url = $request->good_image_url;
+        $good->image_url = $request->good_image_url;
+        $good->image_name = $request->good_image_name;
         $goods->status_id = $request->good_status_id;
         $goods->price = $request->good_price;
         $goods->category = $request->good_category;

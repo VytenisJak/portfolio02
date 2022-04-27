@@ -16,7 +16,9 @@
             <td>{{$goods->id}}</td>
             <td>{{$goods->title}}</td>
             <td>{{$goods->description}}</td>
-            <td>{{$goods->image_url}}</td>
+                        <!--
+            <td><img src="{{'/images/'.$good->image_url}}" alt='{{$good->image_name}}' /></td>
+            -->
             <td>{{$goods->status_id}}</td>
             <td>{{$goods->price}}</td>
             <td>{{$goods->category}}</td>

@@ -18,7 +18,8 @@ return new class extends Migration
 
             $table->string("title");
             $table->longText("description");
-            $table->string('image_url', 300);
+            $table->string('image_url');
+            $table->string('image_name');
             $table->unsignedBigInteger("status_id");
             //$table->foreign('status_id')->references('id')->on('task_statuses');
             $table->bigInteger("price");
