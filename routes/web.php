@@ -31,7 +31,7 @@ Route::prefix('goods')->group(function() {
     Route::get('show/{goods}', 'App\Http\Controllers\GoodsController@show')->name('goods.show');
 
     Route::post('storeAjax', 'App\Http\Controllers\GoodsController@storeAjax')->name('goods.storeAjax');
-    Route::post('destroyAjax/{goods}', 'App\Http\Controllers\GoodsController@destroyAjax')->name('goods.destroyAjax');
+    Route::post('deleteAjax/{goods}', 'App\Http\Controllers\GoodsController@destroyAjax')->name('goods.destroyAjax');
     Route::get('showAjax/{goods}', 'App\Http\Controllers\GoodsController@showAjax')->name('goods.showAjax');
     Route::post('updateAjax/{goods}', 'App\Http\Controllers\GoodsController@updateAjax')->name('goods.updateAjax');
 });

@@ -11290,24 +11290,25 @@ body, .modal-body {
   background-color: antiquewhite;
 }
 
-th {
-  text-align: center;
+.tableinfo {
+  width: 33.3%;
+  float: left;
+  padding: 0.5%;
 }
 
 .infobox {
-  width: 33.3%;
   height: 30vh;
-  float: left;
+}
+
+.ViewImage_url, .infobox {
   background-size: 100% 100%;
-  background-origin: content-box;
   background: center/cover no-repeat;
   box-sizing: border-box;
   background-origin: content-box;
   background-clip: content-box;
-  padding: 0.5%;
 }
 
-.title {
+.title, .price {
   color: Black;
   text-align: center;
 }
@@ -11322,11 +11323,25 @@ th {
   background-color: rgb(241, 214, 178);
 }
 
-.viewgoodimage_url {
+.ViewImage_url {
   float: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   height: 30vh;
+}
+
+.ViewPrice {
+  border-radius: 50%;
+  font-size: large;
+  text-align: center;
+  color: rgb(223, 154, 64);
+  font-weight: bold;
+  background-color: rgb(77, 46, 7);
+  padding: 1vh;
+}
+
+.modalsubheader {
+  font-weight: bold;
 }

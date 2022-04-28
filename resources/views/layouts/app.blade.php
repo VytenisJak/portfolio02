@@ -42,7 +42,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a><button type="button" class="btn btn-primary topmenu" data-bs-toggle="modal" data-bs-target="#createNewItem">
+                            <a><button type="button" class="btn btn-secondary topmenu" data-bs-toggle="modal" data-bs-target="#createNewItem">
                                 Create New
                             </button></a>
                         </li>

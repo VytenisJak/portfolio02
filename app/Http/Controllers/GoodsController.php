@@ -28,7 +28,7 @@ class GoodsController extends Controller
      */
     public function create()
     {
-        return view('goods.create');
+        //
     }
 
     /**
@@ -39,22 +39,7 @@ class GoodsController extends Controller
      */
     public function store(Request $request)
     {
-        $good = new goods;
-        $good->title = $request->good_title;
-        $good->description = $request->good_description;
-
-        $imageName = time().'.'.$request->good_image_url->extension();
-        $request->good_image_url->move(public_path('images') , $imageName);
-        $good->image_url = $imageName;
-
-        $good->image_name = $request->good_image_name;
-        $good->status_id = $request->good_status_id;
-        $good->price = $request->good_price;
-        $good->category = $request->good_category;  
-
-        $good->save();
-
-        return redirect()->route('goods.index');
+        //
     }
 
     /**
@@ -65,7 +50,7 @@ class GoodsController extends Controller
      */
     public function show(goods $goods)
     {
-        return view('goods.show',['goods' => $goods]);
+        //
     }
 
     /**
@@ -76,7 +61,7 @@ class GoodsController extends Controller
      */
     public function edit(goods $goods)
     {
-        return view('goods.edit',['goods' => $goods]);
+        //
     }
 
     /**
@@ -88,17 +73,7 @@ class GoodsController extends Controller
      */
     public function update(UpdategoodsRequest $request, goods $goods)
     {
-        $goods->title = $request->good_title;
-        $goods->description = $request->good_description;
-        $goods->image_url = $request->good_image_url;
-        $goods->image_name = $request->good_image_name;
-        $goods->status_id = $request->good_status_id;
-        $goods->price = $request->good_price;
-        $goods->category = $request->good_category;
-
-        $goods->save();
-
-        return redirect()->route('goods.index');
+        //
     }
 
     /**
@@ -109,8 +84,7 @@ class GoodsController extends Controller
      */
     public function destroy(goods $goods)
     {
-        $goods->delete();
-        return redirect()->route('goods.index');
+        //
     }
 
     public function storeAjax(Request $request)
@@ -162,9 +136,28 @@ class GoodsController extends Controller
         return $json_response;
     }
 
+    public function updateAjax(Request $request, goods $goods)
+    {
+        $goods->title = $request->good_title;
+        $goods->description = $request->good_description;
+        $goods->image_url = $request->good_image_url;
+        $goods->image_name = $request->good_image_name;
+        $goods->status_id = $request->good_status_id;
+        $goods->price = $request->good_price;
+        $goods->category = $request->good_category;  
+        $goods->save();
 
-
-
-
-
+        $goodsarray = array(
+            "GoodID" => $goods->id, 
+            "GoodTitle" => $goods->title,
+            "GoodDescription" => $goods->description,
+            "GoodImage" => $goods->image_url,
+            "GoodImageName" => $goods->image_name,
+            "GoodStatus" => $goods->status_id,
+            "GoodPrice" => $goods->price,
+            "GoodCategory" => $goods->category,
+        );
+        $json_response =response()->json($goodsarray); 
+        return $json_response;
+    }
 }
