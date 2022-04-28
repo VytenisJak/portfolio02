@@ -7,7 +7,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-body {
+body, .modal-body {
 background-color: antiquewhite;
 }
 
@@ -23,21 +23,28 @@ th {
     background: center/cover no-repeat;
     box-sizing: border-box;
     background-origin: content-box;
-    background-clip: content-box; /*don't show on the padding*/
+    background-clip: content-box;
     padding: 0.5%;
 }
-
 .title{
     color: Black;
     text-align: center;
-
 }
 .topmenu{
     text-align: center;
     background-color: rgb(241, 214, 178);
     border: none;
 }
-.price {
-    width: 15%;
+.modal-header, .modal-footer{
     background-color: rgb(241, 214, 178);
 }
+
+.viewgoodimage_url{
+    float: center; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 30vh;
+}
+
