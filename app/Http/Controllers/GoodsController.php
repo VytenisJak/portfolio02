@@ -143,7 +143,7 @@ class GoodsController extends Controller
         $goods->status_id = $request->good_status_id;
         $goods->price = $request->good_price;
         $goods->category = $request->good_category;  
-        $goods->save();
+        $goods->save();  
 
         $goodsarray = array(
             "GoodID" => $goods->id, 
