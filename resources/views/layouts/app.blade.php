@@ -88,5 +88,6 @@
             @yield('content')
         </main>
     </div>
+    @extends('modal');
 </body>
 </html>

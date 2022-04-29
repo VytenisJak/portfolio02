@@ -17,7 +17,8 @@ class GoodsController extends Controller
      */
     public function index()
     {
-        $goods = goods::all();  
+        $goods = goods::all(); 
+        $goods = goods::sortable()->get(); 
         return view('goods.index', ['goods' => $goods]);
     }
 
@@ -93,9 +94,6 @@ class GoodsController extends Controller
         $good->title = $request->good_title;
         $good->description = $request->good_description;
         $good->image_url = $request->good_image_url;
-      //  $imageName = time().'.'.$request->good_image_url->extension();
-      //  $request->good_image_url->move(public_path('images') , $imageName);
-      //  $good->image_url = $imageName;
         $good->image_name = $request->good_image_name;
         $good->status_id = $request->good_status_id;
         $good->price = $request->good_price;
