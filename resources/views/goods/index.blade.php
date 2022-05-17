@@ -39,7 +39,6 @@ $(document).ready(function() {
             let good_image_url;
             let good_image_name;
             let good_price;
-            let good_category;
             let good_category_id;
 
             good_title = $('#Title').val();
@@ -47,7 +46,6 @@ $(document).ready(function() {
             good_image_url = $('#Imgage').val();
             good_image_name = $('#ImageName').val();
             good_price = $('#Price').val();
-            good_category = $('#Category').val();
             good_category_id = $('#Category_id').val();
             $.ajax({
                 type: 'POST',
@@ -58,7 +56,6 @@ $(document).ready(function() {
                     good_image_url: good_image_url,
                     good_image_name: good_image_name,  
                     good_price: good_price,
-                    good_category: good_category,
                     good_category_id: good_category_id, 
                 },
                 success: function(data) { //closes modal upon success

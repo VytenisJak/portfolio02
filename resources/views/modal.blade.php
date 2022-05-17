@@ -12,7 +12,6 @@
                         <input id="Imgage"  class="form-control" type='text' name="good_image_url" placeholder="Imgage url"/>
                         <input id="ImageName" class="form-control" type='text' name="good_image_name" placeholder="Image title"/>
                         <input id="Price"  class="form-control" type='text' name="good_price" placeholder="Price"/>
-                        <input id="Category"  class="form-control" type='text' name="good_category" placeholder="category"/>                  
                         <select id="Category_id" class="form-select create-input">
                         @foreach ($categories as $cat)
                             <option value="{{$cat->id}}">{{$cat->CategoryName}}</option>

@@ -98,7 +98,6 @@ class GoodsController extends Controller
         $good->image_url = $request->good_image_url;
         $good->image_name = $request->good_image_name;
         $good->price = $request->good_price;
-        $good->category = $request->good_category;
         $good->category_id = $request->good_category_id;  
         $good->save();
 
@@ -109,7 +108,6 @@ class GoodsController extends Controller
             "GoodImage" => $good->image_url,
             "GoodImageName" => $good->image_name,
             "GoodPrice" => $good->price,
-            "GoodCategory" => $good->category,
             "GoodCategoryID" => $good->category_id,
         );
         $json_response =response()->json($goodsarray); 
