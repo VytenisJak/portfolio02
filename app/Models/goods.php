@@ -12,5 +12,10 @@ class goods extends Model
     use Sortable;
     public $sortable = ['id', 'title', 'description', 'image_url', 'status_id',
                         'image_url', 'status_id', 'price', 'category'];
-                        use HasFactory;
+
+    public function goodcategory() {
+    return $this->belongsTo(categories::class, 'category_id', 'id');
+    }
+
+    use HasFactory;
 }

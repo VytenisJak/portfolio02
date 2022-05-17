@@ -22,8 +22,10 @@ return new class extends Migration
             $table->unsignedBigInteger("status_id");
             $table->string("price");
             $table->string("category");
+            $table->unsignedBigInteger("category_id");
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
-        });
+        }); 
     }
 
 

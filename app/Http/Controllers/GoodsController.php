@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Sortable;
 
 use App\Models\goods;
+use App\Models\categories;
 use App\Http\Requests\StoregoodsRequest;
 use App\Http\Requests\UpdategoodsRequest;
 
@@ -18,8 +19,9 @@ class GoodsController extends Controller
     public function index()
     {
         $goods = goods::all(); 
-        $goods = goods::sortable()->get(); 
-        return view('goods.index', ['goods' => $goods]);
+        $goods = goods::sortable()->get();
+        $categories = Categories::all(); 
+        return view('goods.index', ['goods' => $goods, 'categories'=> $categories]);
     }
 
     /**
@@ -97,7 +99,8 @@ class GoodsController extends Controller
         $good->image_name = $request->good_image_name;
         $good->status_id = $request->good_status_id;
         $good->price = $request->good_price;
-        $good->category = $request->good_category;  
+        $good->category = $request->good_category;
+        $good->category_id = $request->good_category_id;  
         $good->save();
 
         $goodsarray = array(
@@ -109,6 +112,7 @@ class GoodsController extends Controller
             "GoodStatus" => $good->status_id,
             "GoodPrice" => $good->price,
             "GoodCategory" => $good->category,
+            "GoodCategoryID" => $good->category_id,
         );
         $json_response =response()->json($goodsarray); 
         return $json_response;
@@ -128,7 +132,7 @@ class GoodsController extends Controller
             "GoodImageName" => $goods->image_name,
             "GoodStatus" => $goods->status_id,
             "GoodPrice" => $goods->price,
-            "GoodCategory" => $goods->category,
+            "GoodCategory" => $goods->goodcategory->CategoryName,
         );
         $json_response =response()->json($goodsarray); 
         return $json_response;
@@ -153,7 +157,7 @@ class GoodsController extends Controller
             "GoodImageName" => $goods->image_name,
             "GoodStatus" => $goods->status_id,
             "GoodPrice" => $goods->price,
-            "GoodCategory" => $goods->category,
+            "GoodCategory" => $goods->goodcategory->CategoryName,
         );
         $json_response =response()->json($goodsarray); 
         return $json_response;

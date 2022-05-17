@@ -63,7 +63,11 @@
                         <input id="EditImageName" class="form-control" type='text' name="good_image_name"  placeholder=""/>
                         <input id="EditStatus" class="form-control" type='text' name="good_status_id"  placeholder=""/>
                         <input id="EditPrice"  class="form-control" type='text' name="good_price"  placeholder=""/>
-                        <input id="EditCategory"  class="form-control" type='text' name="good_category"  placeholder=""/>
+                        <select id="EditCategory" class="form-select create-input">
+                            @foreach ($categories as $cat)
+                            <option value="{{$cat->id}}">{{$cat->CategoryName}}</option>
+                            @endforeach
+                        </select> 
                     </div>
                 </div> 
                 <div class="modal-footer">
