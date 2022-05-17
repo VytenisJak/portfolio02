@@ -111,7 +111,7 @@ $(document).ready(function() {
                     $('#EditImgage').val(data.GoodImage);
                     $('#EditImageName').val(data.GoodImage);                 
                     $('#EditPrice').val(data.GoodPrice);                                  
-                    $('#EditCategory').val(data.GoodCategory);                              
+                    $('#EditCategory').val(data.GoodCategory); 
                 }
             });
         });
