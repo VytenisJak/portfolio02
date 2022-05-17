@@ -14,6 +14,11 @@
                         <input id="Status" class="form-control" type='text' name="good_status_id" placeholder="Status"/>
                         <input id="Price"  class="form-control" type='text' name="good_price" placeholder="Price"/>
                         <input id="Category"  class="form-control" type='text' name="good_category" placeholder="category"/>                  
+                        <select id="Category_id" class="form-select create-input">
+                        @foreach ($categories as $cat)
+                            <option value="{{$cat->id}}">{{$cat->CategoryName}}</option>
+                        @endforeach
+                        </select> 
                     </div>
                 </div>   
                 <div class="modal-footer">
@@ -36,7 +41,7 @@
                         <p class ="modalsubheader">Description:</p> 
                         <div class="ViewDescription"></div>
                     </div> 
-                    <div class="ViewCategory"></div>
+                   <div class="ViewCategory"></div>
                 </div> 
                 <div class="modal-footer"></div>
             </div>

@@ -41,6 +41,7 @@ $(document).ready(function() {
             let good_status_id;
             let good_price;
             let good_category;
+            let good_category_id;
 
             good_title = $('#Title').val();
             good_description = $('#Description').val();
@@ -48,7 +49,8 @@ $(document).ready(function() {
             good_image_name = $('#ImageName').val();
             good_status_id = $('#Status').val();
             good_price = $('#Price').val();
-            good_category = $('#Category').val();           
+            good_category = $('#Category').val();
+            good_category_id = $('#Category_id').val();
             $.ajax({
                 type: 'POST',
                 url: '{{route("goods.storeAjax")}}',
@@ -59,7 +61,8 @@ $(document).ready(function() {
                     good_image_name: good_image_name, 
                     good_status_id: good_status_id, 
                     good_price: good_price,
-                    good_category: good_category, 
+                    good_category: good_category,
+                    good_category_id: good_category_id, 
                 },
                 success: function(data) { //closes modal upon success
                     $("#createNewItem").hide();
@@ -91,11 +94,12 @@ $(document).ready(function() {
                 type: 'GET',
                  url: '/goods/showAjax/' + itemid,
                 success: function(data) {
-                    $('.ViewTitle').html(data.GoodTitle);                   
+                    $('.ViewTitle').html(data.GoodTitle);
+                    $('.ViewCategoryID').html('categories: '+data.GoodCategoryID);                     
                     $('.ViewDescription').html(data.GoodDescription);                   
                     $('.ViewImgage').html(data.GoodImage);               
                     $('.ViewPrice').html(data.GoodPrice+' €');                                  
-                    $('.ViewCategory').html('categories: '+data.GoodCategory);                                  
+                    $('.ViewCategory').html('category: '+data.GoodCategory);                                
                 }
             });
         });
