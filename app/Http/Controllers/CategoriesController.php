@@ -90,6 +90,7 @@ class CategoriesController extends Controller
      */
     public function destroy(categories $categories)
     {
-        //
+        $categories->delete();
+        return redirect()->route('categories.index');
     }
 }

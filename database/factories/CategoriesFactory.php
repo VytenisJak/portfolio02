@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\categories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +17,8 @@ class CategoriesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'CategoryID' => $this ->faker -> numberBetween(1,100),
+            'CategoryName' => $this ->faker -> lastName(),
         ];
     }
 }

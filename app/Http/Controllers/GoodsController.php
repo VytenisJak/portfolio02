@@ -156,3 +156,4 @@ class GoodsController extends Controller
         return $json_response;
     }
 }
+

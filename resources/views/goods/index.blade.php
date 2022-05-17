@@ -7,7 +7,13 @@
             <th>@sortablelink('title', 'Name')</th>
             <th>@sortablelink('price', 'Price')</th>
             <th>@sortablelink('category', 'Category')</th>
-            <th>Search</th>
+            <th>
+                <div class="searchAjaxForm">
+                    <input id="searchValue" type="text">
+                    <span class="search-feedback"></span>
+                    <button type="button" id="submitSearch">Find</button>
+            </div>  
+            </th>
         </tr>
     </table>
     @foreach ($goods as $good)

@@ -27,10 +27,12 @@ Route::prefix('goods')->group(function() {
     Route::post('deleteAjax/{goods}', 'App\Http\Controllers\GoodsController@destroyAjax')->name('goods.destroyAjax');
     Route::get('showAjax/{goods}', 'App\Http\Controllers\GoodsController@showAjax')->name('goods.showAjax');
     Route::post('updateAjax/{goods}', 'App\Http\Controllers\GoodsController@updateAjax')->name('goods.updateAjax');
+    Route::get('searchAjax', 'App\Http\Controllers\GoodsController@searchAjax')->name('goods.searchAjax');
 });
 
 Route::prefix('categories')->group(function() {
     Route::get('', 'App\Http\Controllers\CategoriesController@index')->name('categories.index');
     Route::get('create', 'App\Http\Controllers\CategoriesController@create')->name('categories.create');
     Route::post('store', 'App\Http\Controllers\CategoriesController@store')->name('categories.store');
+    Route::post('destroy/{categories}', 'App\Http\Controllers\CategoriesController@destroy' )->name('categories.destroy');
 });
