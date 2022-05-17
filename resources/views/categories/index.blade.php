@@ -11,12 +11,10 @@
         @foreach ($categories as $good)
         <tr>
             <td>{{$good->id}}</td>
-            <td>{{$good->CategoryID}}</td>
             <td>{{$good->CategoryName}}</td>
+            <td>{{$good->CategoryID}}</td>
             <td>
-                <a class="btn btn-primary" href="">Edit</a>
-                <a class="btn btn-secondary" href="">Show</a>
-                <a class="btn btn-secondary topmenu" href="{{route('categories.create')}}">New</a>
+                <button class="btn btn-danger" type="submit">Delete</button>
             </td>
         </tr>
         @endforeach 

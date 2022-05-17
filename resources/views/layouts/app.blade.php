@@ -43,8 +43,9 @@
                         <!-- Authentication Links -->
                         <li class="nav-item">
                             <a><button type="button" class="btn btn-secondary topmenu" data-bs-toggle="modal" data-bs-target="#createNewItem">
-                                Create New
+                               New Good
                             </button></a>
+                            <a class="btn btn-secondary topmenu" href="{{route('categories.create')}}">New Category</a>
                         </li>
                        
                        
