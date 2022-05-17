@@ -97,7 +97,6 @@ class GoodsController extends Controller
         $good->description = $request->good_description;
         $good->image_url = $request->good_image_url;
         $good->image_name = $request->good_image_name;
-        $good->status_id = $request->good_status_id;
         $good->price = $request->good_price;
         $good->category = $request->good_category;
         $good->category_id = $request->good_category_id;  
@@ -109,7 +108,6 @@ class GoodsController extends Controller
             "GoodDescription" => $good->description,
             "GoodImage" => $good->image_url,
             "GoodImageName" => $good->image_name,
-            "GoodStatus" => $good->status_id,
             "GoodPrice" => $good->price,
             "GoodCategory" => $good->category,
             "GoodCategoryID" => $good->category_id,
@@ -130,7 +128,6 @@ class GoodsController extends Controller
             "GoodDescription" => $goods->description,
             "GoodImage" => $goods->image_url,
             "GoodImageName" => $goods->image_name,
-            "GoodStatus" => $goods->status_id,
             "GoodPrice" => $goods->price,
             "GoodCategory" => $goods->goodcategory->CategoryName,
         );
@@ -144,7 +141,6 @@ class GoodsController extends Controller
         $goods->description = $request->good_description;
         $goods->image_url = $request->good_image_url;
         $goods->image_name = $request->good_image_name;
-        $goods->status_id = $request->good_status_id;
         $goods->price = $request->good_price;
         $goods->category = $request->good_category;  
         $goods->save();  
@@ -155,7 +151,6 @@ class GoodsController extends Controller
             "GoodDescription" => $goods->description,
             "GoodImage" => $goods->image_url,
             "GoodImageName" => $goods->image_name,
-            "GoodStatus" => $goods->status_id,
             "GoodPrice" => $goods->price,
             "GoodCategory" => $goods->goodcategory->CategoryName,
         );

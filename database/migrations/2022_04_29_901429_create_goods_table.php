@@ -19,7 +19,6 @@ return new class extends Migration
             $table->longText("description");
             $table->string('image_url');
             $table->string('image_name');
-            $table->unsignedBigInteger("status_id");
             $table->string("price");
             $table->string("category");
             $table->unsignedBigInteger("category_id");

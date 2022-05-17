@@ -38,7 +38,6 @@ $(document).ready(function() {
             let good_description;
             let good_image_url;
             let good_image_name;
-            let good_status_id;
             let good_price;
             let good_category;
             let good_category_id;
@@ -47,7 +46,6 @@ $(document).ready(function() {
             good_description = $('#Description').val();
             good_image_url = $('#Imgage').val();
             good_image_name = $('#ImageName').val();
-            good_status_id = $('#Status').val();
             good_price = $('#Price').val();
             good_category = $('#Category').val();
             good_category_id = $('#Category_id').val();
@@ -58,8 +56,7 @@ $(document).ready(function() {
                     good_title: good_title, 
                     good_description: good_description, 
                     good_image_url: good_image_url,
-                    good_image_name: good_image_name, 
-                    good_status_id: good_status_id, 
+                    good_image_name: good_image_name,  
                     good_price: good_price,
                     good_category: good_category,
                     good_category_id: good_category_id, 
@@ -115,8 +112,7 @@ $(document).ready(function() {
                     $('#EditTitle').val(data.GoodTitle);                   
                     $('#EditDescription').val(data.GoodDescription);                   
                     $('#EditImgage').val(data.GoodImage);
-                    $('#EditImageName').val(data.GoodImage);
-                    $('#EditStatus').val(data.GoodImage);                  
+                    $('#EditImageName').val(data.GoodImage);                 
                     $('#EditPrice').val(data.GoodPrice);                                  
                     $('#EditCategory').val(data.GoodCategory);                              
                 }
@@ -128,7 +124,6 @@ $(document).ready(function() {
             let good_description;
             let good_image_url;
             let good_image_name;
-            let good_status_id;
             let good_price;
             let good_category;
 
@@ -137,7 +132,6 @@ $(document).ready(function() {
             good_description = $('#EditDescription').val();
             good_image_url = $('#EditImgage').val();
             good_image_name = $('#EditImageName').val();
-            good_status_id = $('#EditStatus').val();
             good_price = $('#EditPrice').val();
             good_category = $('#EditCategory').val();
             $.ajax({
@@ -148,7 +142,6 @@ $(document).ready(function() {
                     good_description: good_description, 
                     good_image_url: good_image_url,
                     good_image_name: good_image_name, 
-                    good_status_id: good_status_id, 
                     good_price: good_price,
                     good_category: good_category, 
                 },

@@ -11,7 +11,6 @@
                         <input id="Description" class="form-control" type='textarea' name="good_description" placeholder="Description of the new thing"/>
                         <input id="Imgage"  class="form-control" type='text' name="good_image_url" placeholder="Imgage url"/>
                         <input id="ImageName" class="form-control" type='text' name="good_image_name" placeholder="Image title"/>
-                        <input id="Status" class="form-control" type='text' name="good_status_id" placeholder="Status"/>
                         <input id="Price"  class="form-control" type='text' name="good_price" placeholder="Price"/>
                         <input id="Category"  class="form-control" type='text' name="good_category" placeholder="category"/>                  
                         <select id="Category_id" class="form-select create-input">
@@ -61,7 +60,6 @@
                         <input id="EditDescription" class="form-control" type='textarea' name="good_description" placeholder=""/>
                         <input id="EditImgage"  class="form-control" type='text' name="good_image_url"  placeholder=""/>
                         <input id="EditImageName" class="form-control" type='text' name="good_image_name"  placeholder=""/>
-                        <input id="EditStatus" class="form-control" type='text' name="good_status_id"  placeholder=""/>
                         <input id="EditPrice"  class="form-control" type='text' name="good_price"  placeholder=""/>
                         <select id="EditCategory" class="form-select create-input">
                             @foreach ($categories as $cat)
