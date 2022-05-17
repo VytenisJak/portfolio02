@@ -64,6 +64,9 @@ $(document).ready(function() {
                     good_price: good_price,
                     good_category_id: good_category_id, 
                 },
+                //enctype: 'multipart/form-data',
+                //processData: false,
+                //contentType: false,
                 success: function(data) { //closes modal upon success
                     $("#createNewItem").hide();
                     $('body').removeClass('modal-open');
@@ -110,12 +113,15 @@ $(document).ready(function() {
             $.ajax({
                 type: 'GET',
                 url: '/goods/showAjax/' + itemid,
+                //enctype: 'multipart/form-data',
+                //processData: false,
+                //contentType: false,
                 success: function(data) {
                     $('#EditID').val(data.GoodID);
                     $('#EditTitle').val(data.GoodTitle);                   
                     $('#EditDescription').val(data.GoodDescription);                   
                     $('#EditImgage').val(data.GoodImage);
-                    $('#EditImageName').val(data.GoodImage);                 
+                    $('#EditImageName').val(data.GoodImageName);                
                     $('#EditPrice').val(data.GoodPrice);                                  
                     $('#EditCategory').val(data.GoodCategory); 
                 }
